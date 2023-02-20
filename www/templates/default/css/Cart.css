@@ -1,0 +1,116 @@
+/* -----------------PAGE------------------------------------------------- */
+.page {
+    flex: 1 1 auto;
+}
+.main-block {
+    position: relative;
+}
+.page__main-block__fixed {
+    display: flex;
+    justify-content: center;
+}
+.main_block__info {
+    display: flex;
+    flex-direction: column;
+    padding: 44px 0px 0px 90px;
+}
+.main_block__info > span {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+}
+.main-block__cart_empty {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    padding: 100px 0px 100px 0px;
+}
+.main-block__cart_info_text {
+    padding: 18px 0px 0px 0px;
+}
+.main-block_cart_table {
+    padding: 58px 0px 0px 90px;
+}
+.main-block__cart_header_table > td {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    padding: 0px 80px 40px 0px;
+}
+.input_number {
+    background-color: #eee;
+	vertical-align: top;
+	outline: none;
+	height: 40px;
+	line-height: 40px;    
+	text-indent: 10px;
+	display: inline-block;
+	width: 100px;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	font-size: 14px;
+	border-radius: 8px;
+}
+.main-block__cart_body_table > td {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+}
+.main-block__cart_body_table_buttons__container { 
+    padding: 0px 0px 0px 56px;
+}
+.main-block__cart_body_table_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 164px;
+    background: #029FAE;
+    border-radius: 8px;
+}
+.main-block__cart_body_table_buttons > a{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    text-align: center;
+}
+.main-block__cart_body_table_buttonCheckout {
+    padding: 40px 0px 100px 95px;
+}
+.main-block__cart_body_table_buttonCheckout > input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 221px;
+    background: #029FAE;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    text-align: center;
+}

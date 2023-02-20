@@ -1,0 +1,158 @@
+/* -----------------PAGE------------------------------------------------- */
+.page {
+    flex: 1 1 auto;
+}
+.main-block {
+    position: relative;
+}
+.main-block__container {
+    display: flex;
+    justify-content: center;
+}
+.page__main-block-login {
+    width: 648px;
+    height: 370px;
+    margin: 110px 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(39, 35, 67, 0.12);
+    border-radius: 12px;
+}
+.main-block__title {
+    display: flex;
+    padding: 32px 0px 24px 0px;
+    align-items: center;
+    justify-content: center;
+}
+.main-block__title-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 110%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #272343;
+}
+.main-block__body-textbox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.main-block__body-textbox > input {
+    outline: none;
+    width: 584px;
+    height: 50px;
+    padding: 0px 20px;
+    background: #F0F2F3;
+    opacity: 0.7;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #424347;
+}
+.main-block__body-textbox > input:first-child {
+    margin: 0px 0px 16px 0px;
+}
+.main-block__body-textbox > input::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #9A9CAA;
+}
+.header_visible-password_log > img {
+    position: absolute;
+    top: 67%;
+    right: 7%;
+}
+.main-block-buttons {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 24px 0px 12px 0px;
+}
+.main-block-buttons-reg {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    width: 584px;
+    background: #029FAE;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.header_autorize-strelka > img {
+    position: absolute;
+    top: 43%;
+    right: 33%;
+}
+.main-block-forgot-password {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px 0px;
+    width: 648px;
+    height: 63px;
+}
+.main-block-forgot-password_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    text-align: center;
+    color: #272343;
+}
+.main-block-forgot-password_reg {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 110%;
+    text-align: center;
+    color: #007580;
+    margin-left: 5px;
+}
+.main-block__orders_table {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px 100px 0px;
+}
+.main-block__orders_header_table > th{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    padding: 0px 40px 40px 40px;
+}
+.main-block__orders_body_table > td {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    text-align: center;
+}
+.main-block__orders_table_sub {
+    display: flex;
+    justify-content: flex-start;
+    border: 2px solid #272343;
+    border-radius: 8px;
+}

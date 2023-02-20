@@ -1,0 +1,95 @@
+/* -----------------PAGE------------------------------------------------- */
+.page {
+    flex: 1 1 auto;
+}
+.main-block {
+    position: relative;
+}
+.main-block__container_tovar {
+    display: flex;
+    justify-content: center;
+    margin: 111px 0px 0px 0px;
+    gap: 75px;
+}
+.main-block__container_tovar_characterisiki {
+    display: flex;
+    flex-direction: column;
+}
+.main-block__container_tovar_characterisiki_name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+}
+.main-block__container_tovar_characterisiki_cost {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    padding: 31px 0px 0px 0px;
+}
+.main-block__container_tovar_characterisiki_price {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    padding: 11px 0px 0px 0px;
+}
+.main-block__container_tovar_button {
+    padding: 38px 0px 0px 0px;
+}
+.main-block__container_tovar_button_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 255px;
+    background: #029FAE;
+    border-radius: 8px;
+}
+.main-block__container_tovar_button_link > a{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    text-align: center;
+}
+.main-block__container_description {
+    display: flex;
+    justify-content: center;
+}
+.main-block__container_description_container {
+    width: 990px;
+}
+.main-block__container_description_header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    padding: 68px 0px 0px 0px;
+}
+.main-block__container_description_body {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    text-transform: capitalize;
+    color: #272343;
+    padding: 39px 0px 100px 0px;
+}
