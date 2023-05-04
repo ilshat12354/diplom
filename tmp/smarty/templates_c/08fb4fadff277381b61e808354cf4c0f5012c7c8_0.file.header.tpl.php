@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2023-02-19 01:03:41
+/* Smarty version 4.1.0, created on 2023-05-04 11:50:12
   from 'C:\xampp\htdocs\volleyshop.local\views\default\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_63f1675d4a1ba1_21581160',
+  'unifunc' => 'content_64537fd492a377_91352698',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '08fb4fadff277381b61e808354cf4c0f5012c7c8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\volleyshop.local\\views\\default\\header.tpl',
-      1 => 1676765017,
+      1 => 1683193688,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:leftcolumn.tpl' => 1,
   ),
 ),false)) {
-function content_63f1675d4a1ba1_21581160 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64537fd492a377_91352698 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
@@ -71,6 +71,12 @@ css/Footer.css" type="text/css"/>
                             </div>
                         </div>
                         <div class="header__buttons">
+                            <div class="header__buttons-courses">
+                                <a href="/cart/" title="Перейти в корзину" class="cart_link_courses">
+                                    <img src="/images/img/icon_courses.png" alt="Курсы">
+                                    <span class="cart">Мои курсы</span>
+                                </a>
+                            </div>
                             <div class="header__buttons-cart">
                                 <a href="/cart/" title="Перейти в корзину" class="cart_link">
                                     <img src="/images/img/cart.png" alt="Корзина">

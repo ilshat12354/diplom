@@ -34,6 +34,12 @@
                             </div>
                         </div>
                         <div class="header__buttons">
+                            <div class="header__buttons-courses">
+                                <a href="/cart/" title="Перейти в корзину" class="cart_link_courses">
+                                    <img src="/images/img/icon_courses.png" alt="Курсы">
+                                    <span class="cart">Мои курсы</span>
+                                </a>
+                            </div>
                             <div class="header__buttons-cart">
                                 <a href="/cart/" title="Перейти в корзину" class="cart_link">
                                     <img src="/images/img/cart.png" alt="Корзина">

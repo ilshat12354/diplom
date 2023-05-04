@@ -68,7 +68,6 @@ hr {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 300px;
     height: 84px;
 
     flex: none;
@@ -93,12 +92,9 @@ hr {
     align-items: center;
     padding: 0px;
     gap: 8px;
-    
-    width: 188px;
     height: 40px;
 }
 .header__logo > a {
-    width: 140px;
     height: 31px;
     font-family: 'Inter';
     font-style: normal;
@@ -144,7 +140,6 @@ hr {
     align-items: flex-start;
     padding: 0px;
     gap: 12px;
-    width: 200px;
     height: 44px;
 
     flex: none;
@@ -164,12 +159,33 @@ hr {
     order: 0;
     flex-grow: 0;
 }
+.header__buttons-courses {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #FFFFFF;
+    border-radius: 8px; 
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
 .cart_link {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     width: 144px;
+    height: 44px;
+}
+.cart_link_courses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 124px;
     height: 44px;
 }
 .cart {
