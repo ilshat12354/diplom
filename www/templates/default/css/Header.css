@@ -47,7 +47,7 @@ body {
     padding: 0px 15px;
     box-sizing: content-box;
 }
-/* -----------------HEADER------------------------------------------------- */
+/* -----------------HEADER------------------------------------------------ */
 hr {
     background: #272343;
     height: 45px;
@@ -95,7 +95,7 @@ hr {
     height: 40px;
 }
 .header__logo > a {
-    height: 31px;
+    height: 31px; 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
