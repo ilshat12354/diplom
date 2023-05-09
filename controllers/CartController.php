@@ -9,12 +9,12 @@
 
 // подключаем модели
 include_once '../models/CategoriesModel.php';
-include_once '../models/ProductsModel.php';
+include_once '../models/CoursesModel.php';
 include_once '../models/OrdersModel.php';
 include_once '../models/PurchaseModel.php';
 
 /**
- * Добавление продукта в корзину
+ * Добавление курса в корзину
  * 
  * @param integer id GET параметр - ID добавляемого продукта
  * @return json информация об операции (успех, колво элементов в корзине) 
@@ -38,7 +38,7 @@ function addtocartAction(){
 }
 
 /**
- * Удаление продукта из корзины
+ * Удаление курса из корзины
  * 
  * @param integer id GET параметр - ID удаляемого из корзины продукта
  * @return json информация об операции (успех, колво элементов в корзине) 
@@ -69,11 +69,11 @@ function indexAction($smarty){
     $itemsIds = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 
     $rsCategories = getAllMainCatsWithChildren();
-    $rsProducts = getProductsFromArray($itemsIds);
+    $rsCourses = getCoursesFromArray($itemsIds);
     
     $smarty->assign('pageTitle', 'Корзина');
     $smarty->assign('rsCategories', $rsCategories);
-    $smarty->assign('rsProducts', $rsProducts);
+    $smarty->assign('rsCourses', $rsCourses);
 
     loadTemplate($smarty, 'header');
     loadTemplate($smarty, 'cart');
@@ -104,7 +104,7 @@ function orderAction($smarty){
     }
     
     // получаем список продуктов по массиву корзины
-    $rsProducts = getProductsFromArray($itemsIds);
+    $rsCourses = getCoursesFromArray($itemsIds);
     
     // добавляем каждому продукту дополнительное поле 
     // "realPrice = количество продуктов * на цену продукта"
@@ -112,25 +112,25 @@ function orderAction($smarty){
     // &$item - для того чтобы при изменении переменной $item 
     // менялся и элемент массива $rsProducts
     $i = 0;
-    foreach($rsProducts as &$item){
+    foreach($rsCourses as &$item){
         $item['cnt'] = isset($itemsCnt[$item['id']]) ? $itemsCnt[$item['id']] : 0;
         if($item['cnt']){
             $item['realPrice'] = $item['cnt'] * $item['price'];
         } else {
             // если вдруг получилось так что товар в корзине есть, а количество == нулю,
             // то удаляем этот товар
-            unset($rsProducts[$i]);
+            unset($rsCourses[$i]);
         }
         $i++;
     }
     
-    if(! $rsProducts){
+    if(! $rsCourses){
 	echo "Корзина пуста";
 	return;
     }
     
     // полученный массив покупаемых товаров помещаем в сессионную переменную
-    $_SESSION['saleCart'] = $rsProducts;
+    $_SESSION['saleCart'] = $rsCourses;
 	
     $rsCategories = getAllMainCatsWithChildren();
     
@@ -142,7 +142,7 @@ function orderAction($smarty){
 	
     $smarty->assign('pageTitle', 'Заказ');
     $smarty->assign('rsCategories', $rsCategories);
-    $smarty->assign('rsProducts', $rsProducts);
+    $smarty->assign('rsCourses', $rsCourses);
      
     loadTemplate($smarty, 'header');
     loadTemplate($smarty, 'order');
@@ -156,7 +156,7 @@ function orderAction($smarty){
   * @return json информация о результате выполнения 
   */
 function saveorderAction(){
-	// получаем массив покупаемых товаров
+	// получаем массив покупаемых курсов
 	$cart = isset($_SESSION['saleCart']) ? $_SESSION['saleCart'] : null;
 	// если корзина пуста, то формируем ответ с ошибкой, отдаем его в формате 
 	// json и выходим из функции 
@@ -182,7 +182,7 @@ function saveorderAction(){
             return;
 	} 
 	
-	// сохраняем товары для созданного заказа
+	// сохраняем курсы для созданного заказа
 	$res = setPurchaseForOrder($orderId, $cart);
 	
 	// если успешно, то формируем ответ, удаляем переменные корзины

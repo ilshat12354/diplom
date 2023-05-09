@@ -13,8 +13,8 @@
  * @return boolean TRUE в случае успешного добавления в БД
  */
 function setPurchaseForOrder($orderId, $cart){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
-    $sql = "INSERT INTO purchase (order_id, product_id, price, amount) VALUES ";
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
+    $sql = "INSERT INTO purchase (order_id, course_id, price, amount) VALUES ";
     $values = array();
     // формируем массив строк для запроса для каждого товара
     foreach ($cart as $item) {
@@ -32,10 +32,10 @@ function setPurchaseForOrder($orderId, $cart){
  * @return array
  */
 function getPurchaseForOrder($orderId){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
-    $sql = "SELECT `pe`.*, `ps`.`name` 
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
+    $sql = "SELECT `pe`.*, `cs`.`name` 
             FROM purchase as `pe`
-            JOIN products as `ps` ON `pe`.product_id = `ps`.id
+            JOIN courses as `cs` ON `pe`.course_id = `cs`.id
             WHERE `pe`.order_id = {$orderId}";
     $rs = mysqli_query($db, $sql);
     return createSmartyRsArray($rs); 

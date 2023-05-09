@@ -11,9 +11,9 @@
  * @param integer $limit Лимит товаров
  * @return array Массив товаров 
  */
-function getLastProducts($limit = null){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
-    $sql = "SELECT * FROM `products` ORDER BY id DESC";
+function getLastCourses($limit = null){
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
+    $sql = "SELECT * FROM `courses` ORDER BY id DESC";
     if($limit){
         $sql .= " LIMIT {$limit}";
     }
@@ -27,9 +27,9 @@ function getLastProducts($limit = null){
  * @param integer $itemId ID категории
  * @return array массив продуктов 
  */
-function getProductsByCat($itemId){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
-    $sql = "SELECT * FROM products WHERE category_id = '{$itemId}'";
+function getCoursesByCat($itemId){
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
+    $sql = "SELECT * FROM courses WHERE category_id = '{$itemId}'";
     $rs = mysqli_query($db, $sql); 
     return createSmartyRsArray($rs);   
 }
@@ -40,9 +40,9 @@ function getProductsByCat($itemId){
  * @param integer $itemId ID продукта
  * @return array массив данных продукта 
  */
-function getProductById($itemId){
-   $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
-   $sql = "SELECT * FROM products WHERE id = '{$itemId}'";
+function getCourseById($itemId){
+   $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
+   $sql = "SELECT * FROM courses WHERE id = '{$itemId}'";
    $rs = mysqli_query($db, $sql); 
    return mysqli_fetch_assoc($rs);   
 }
@@ -53,17 +53,17 @@ function getProductById($itemId){
  * @param array $itemsIds массив идентификаторов продуктов
  * @return array массив данных продуктов 
  */
-function getProductsFromArray($itemsIds){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+function getCoursesFromArray($itemsIds){
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $strIds = implode(', ', $itemsIds);
-    $sql = "SELECT * FROM products WHERE id in ({$strIds})";	
+    $sql = "SELECT * FROM courses WHERE id in ({$strIds})";	
     $rs = mysqli_query($db, $sql);
     return createSmartyRsArray($rs); 
 }
 
-function getProducts(){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
-    $sql = "SELECT * FROM `products` ORDER BY category_id";
+function getCourses(){
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
+    $sql = "SELECT * FROM `courses` ORDER BY category_id";
     $rs = mysqli_query($db, $sql);
     return createSmartyRsArray($rs);
 }
@@ -78,8 +78,8 @@ function getProducts(){
  * @return type
  */
 function insertProduct($itemName, $itemPrice, $itemDesc, $itemCat){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
-    $sql = "INSERT INTO products SET 
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
+    $sql = "INSERT INTO courses SET 
                 `name` = '{$itemName}',
                 `price` = '{$itemPrice}',
                 `description` = '{$itemDesc}',
@@ -89,8 +89,8 @@ function insertProduct($itemName, $itemPrice, $itemDesc, $itemCat){
     return $rs;
 }
 
-function updateProduct($itemId, $itemName, $itemPrice, $itemStatus, $itemDesc, $itemCat, $newFileName = null){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+function updateCourse($itemId, $itemName, $itemPrice, $itemStatus, $itemDesc, $itemCat, $newFileName = null){
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $set = array();
     if($itemName){
         $set[] = "`name` = '{$itemName}'";
@@ -111,13 +111,13 @@ function updateProduct($itemId, $itemName, $itemPrice, $itemStatus, $itemDesc, $
         $set[] = "`image` = '{$newFileName}'";
     }
     $setStr = implode(", ", $set);
-    $sql = "UPDATE products SET {$setStr} WHERE id = '{$itemId}'";
+    $sql = "UPDATE courses SET {$setStr} WHERE id = '{$itemId}'";
     $rs = mysqli_query($db, $sql);
     return $rs;
 }
 
-function updateProductImage($itemId, $newFileName){
-    $rs = updateProduct($itemId, null, null, null, null, null, $newFileName);
+function updateCourseImage($itemId, $newFileName){
+    $rs = updateCourse($itemId, null, null, null, null, null, $newFileName);
     return $rs;
 }
 

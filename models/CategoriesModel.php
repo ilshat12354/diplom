@@ -12,7 +12,7 @@
  * @return array массив дочерних категорий 
  */
 function getChildrenForCat($catId){
-   $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+   $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
    $sql = "SELECT * FROM categories WHERE parent_id = '{$catId}'";
    $rs = mysqli_query($db, $sql);   
    return createSmartyRsArray($rs); 
@@ -24,7 +24,7 @@ function getChildrenForCat($catId){
  * @return array массив категорий 
  */
 function getAllMainCatsWithChildren(){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = 'SELECT * FROM categories WHERE parent_id = 0';
     $rs = mysqli_query($db, $sql);
     $smartyRs = array();
@@ -45,7 +45,7 @@ function getAllMainCatsWithChildren(){
  * @return array массив - строка категории 
  */
 function getCatById($catId){ 
-   $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+   $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
    $sql = "SELECT * FROM categories WHERE id = '{$catId}'"; 
    $rs = mysqli_query($db, $sql);
    return mysqli_fetch_assoc($rs);  
@@ -57,7 +57,7 @@ function getCatById($catId){
  * @return array массив категорий
  */
 function getAllMainCategories(){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = 'SELECT *FROM categories WHERE parent_id = 0';
     $rs = mysqli_query($db, $sql);
     return createSmartyRsArray($rs);
@@ -71,7 +71,7 @@ function getAllMainCategories(){
  * @return type id новой категории
  */
 function insertCat($catName, $catParentId = 0){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = "INSERT INTO categories (`parent_id`, `name`) VALUES ('{$catParentId}', '{$catName}')";
     mysqli_query($db, $sql);
     $id = mysqli_insert_id($db);
@@ -84,7 +84,7 @@ function insertCat($catName, $catParentId = 0){
  * @return array массив категорий
  */
 function getAllCategories(){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = 'SELECT * FROM categories ORDER BY parent_id ASC';
     $rs = mysqli_query($db, $sql);
     return createSmartyRsArray($rs);
@@ -99,7 +99,7 @@ function getAllCategories(){
  * @return type
  */
 function updateCategoryData($itemId, $parentId = -1, $newName = ''){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $set = array();
     
     if($newName){

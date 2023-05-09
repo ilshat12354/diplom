@@ -23,7 +23,7 @@
                     <div class="header__container-top _container">
                         <div class="header__logo">
                             <img class="header__logo_png" src="/images/img/icon_header.png" alt="Логотип"/>
-                            <a href="/views/default/index.tpl" class="header__logo_text">VolleyShop</a>
+                            <a href="/views/default/index.tpl" class="header__logo_text">CourseArt</a>
                         </div>
                         <div class="header__search">
                             <input type="text" id="search" class="header__logo_png" name="Поиск" placeholder="Поиск"/>
@@ -58,6 +58,6 @@
                     </div>
                 </header>
 
-    {include file='leftcolumn.tpl'}
+    {include file='navigation.tpl'}
 
    <main class="page">

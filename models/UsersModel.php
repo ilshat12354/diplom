@@ -16,7 +16,7 @@
  * @return array массив данных нового пользователя 
  */
 function registerNewUser($email, $pwdMD5, $name, $phone, $adress){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $email   = htmlspecialchars(mysqli_real_escape_string($db, $email));
     $name    = htmlspecialchars(mysqli_real_escape_string($db, $name));
     $phone   = htmlspecialchars(mysqli_real_escape_string($db, $phone));
@@ -76,7 +76,7 @@ function checkRegisterParams($email, $pwd1, $pwd2){
  * @return array  массив - строка из таблицы users, либо пустой массив
  */
 function checkUserEmail($email){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $email = mysqli_real_escape_string($db, $email);
     $sql = "SELECT id FROM users WHERE email = '{$email}'";
     $rs = mysqli_query($db, $sql);
@@ -93,7 +93,7 @@ function checkUserEmail($email){
  */
 function loginUser($email, $pwd)
 {
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $email = htmlspecialchars(mysqli_real_escape_string($db, $email));
     $pwd = md5($pwd);
     
@@ -123,7 +123,7 @@ function loginUser($email, $pwd)
  */
 function updateUserData($name, $phone, $adress, $pwd1, $pwd2, $curPwd)
 {
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $email   = htmlspecialchars(mysqli_real_escape_string($db, $_SESSION['user']['email']));
     $name    = htmlspecialchars(mysqli_real_escape_string($db, $name));
     $phone   = htmlspecialchars(mysqli_real_escape_string($db, $phone));
@@ -159,6 +159,6 @@ function updateUserData($name, $phone, $adress, $pwd1, $pwd2, $curPwd)
  */
 function getCurUserOrders(){
     $userId = isset($_SESSION['user']['id']) ? $_SESSION['user']['id'] : 0;
-    $rs = getOrdersWithProductsByUser($userId);
+    $rs = getOrdersWithCoursesByUser($userId);
     return $rs;
 }

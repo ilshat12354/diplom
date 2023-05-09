@@ -5,7 +5,7 @@
             <div class="footer__column_first">
                 <div class="footer__logo">
                     <img class="footer_logo_png" src="/images/img/icon_header.png" alt="Логотип"/>
-                    <a href="#" class="footer__logo_text"><span>VolleyShop</span></a>
+                    <a href="#" class="footer__logo_text"><span>CourseArt</span></a>
                 </div>
                 <span class="footer__menu-info">Мы ценим своих клиентов, поэтому предлагаем им эксклюзивные товары от проверенных производителей. 
                 На нашем официальном сайте представлены только оригинальные бренды.</span>

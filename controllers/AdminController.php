@@ -9,7 +9,7 @@
 
 // подключаем модели
 include_once '../models/CategoriesModel.php';
-include_once '../models/ProductsModel.php';
+include_once '../models/CoursesModel.php';
 include_once '../models/OrdersModel.php';
 include_once '../models/PurchaseModel.php';
 
@@ -81,16 +81,16 @@ function updatecategoryAction(){
 }
 
 /**
- * Страница управления товарами
+ * Страница управления курсами
  * 
  * @param type $smarty
  */
-function productsAction($smarty){
+function CoursesAction($smarty){
     $rsCategories = getAllCategories();
-    $rsProducts = getProducts();
+    $rsCourses = getCourses();
     
     $smarty->assign('rsCategories', $rsCategories);
-    $smarty->assign('rsProducts', $rsProducts);
+    $smarty->assign('rsProducts', $rsCourses);
     $smarty->assign('pageTitle', 'Страница Администратора');
     
     loadTemplate($smarty, 'adminHeader');
@@ -98,7 +98,7 @@ function productsAction($smarty){
     loadTemplate($smarty, 'adminFooter');
 }
 
-function addproductAction(){
+function addcourseAction(){
     $itemName = $_POST['itemName'];
     $itemPrice = $_POST['itemPrice'];
     $itemDesc = $_POST['itemDesc'];
@@ -118,7 +118,7 @@ function addproductAction(){
     return;
 }
 
-function updateproductAction(){
+function updatecourseAction(){
     $itemId = $_POST['itemId'];
     $itemName = $_POST['itemName'];
     $itemPrice = $_POST['itemPrice'];
@@ -126,7 +126,7 @@ function updateproductAction(){
     $itemDesc = $_POST['itemDesc'];
     $itemCat = $_POST['itemCatId'];
    
-    $res = updateProduct($itemId, $itemName, $itemPrice, $itemStatus, $itemDesc, $itemCat);
+    $res = updateCourse($itemId, $itemName, $itemPrice, $itemStatus, $itemDesc, $itemCat);
     
     if($res){
         $resData['success'] = 1;
@@ -141,7 +141,7 @@ function updateproductAction(){
 }
 
 /**
- * Загрузка изображения для товара
+ * Загрузка изображения для курса
  * 
  */
 function uploadAction(){
@@ -162,9 +162,9 @@ function uploadAction(){
         // Если файл загружен то перемещаем его из временной директории в конечную
         $res = move_uploaded_file($_FILES['filename']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/images/products/' . $newFileName);
         if($res){
-            $res = updateProductImage($itemId, $newFileName);
+            $res = updateCourseImage($itemId, $newFileName);
             if($res){
-                redirect('/admin/products/');
+                redirect('/admin/courses/');
             }
         }
     }

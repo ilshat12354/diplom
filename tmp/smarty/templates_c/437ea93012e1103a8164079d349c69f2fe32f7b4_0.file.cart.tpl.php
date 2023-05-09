@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2023-02-19 22:30:19
+/* Smarty version 4.1.0, created on 2023-05-08 23:58:09
   from 'C:\xampp\htdocs\volleyshop.local\views\default\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_63f294eb3a8ec7_74450289',
+  'unifunc' => 'content_64597071569004_52109083',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '437ea93012e1103a8164079d349c69f2fe32f7b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\volleyshop.local\\views\\default\\cart.tpl',
-      1 => 1676842211,
+      1 => 1683581949,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63f294eb3a8ec7_74450289 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64597071569004_52109083 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="page__main-block main-block">
     <div class="_container">
-        <?php if (!$_smarty_tpl->tpl_vars['rsProducts']->value) {?>
+        <?php if (!$_smarty_tpl->tpl_vars['rsCourses']->value) {?>
             <div class="page__main-block__fixed">
                 <span class="main-block__cart_empty">В корзине пусто</span>
             </div>
@@ -43,13 +43,11 @@ function content_63f294eb3a8ec7_74450289 (Smarty_Internal_Template $_smarty_tpl)
                     <td>Цена</td>
                 </tr>
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rsProducts']->value, 'item', false, NULL, 'products', array (
-  'iteration' => true,
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rsCourses']->value, 'item', false, NULL, 'course', array (
 ));
 $_smarty_tpl->tpl_vars['item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->do_else = false;
-$_smarty_tpl->tpl_vars['__smarty_foreach_products']->value['iteration']++;
 ?>
                 <tr class="main-block__cart_body_table">
                     <td><span><?php echo (isset($_smarty_tpl->tpl_vars['__smarty_foreach_products']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_products']->value['iteration'] : null);?>

@@ -2,7 +2,7 @@
 
 <div class="page__main-block main-block">
     <div class="_container">
-        {if ! $rsProducts}
+        {if ! $rsCourses}
             <div class="page__main-block__fixed">
                 <span class="main-block__cart_empty">В корзине пусто</span>
             </div>
@@ -20,7 +20,7 @@
                     <td>Цена за единицу</td>
                     <td>Цена</td>
                 </tr>
-                {foreach $rsProducts as $item name=products}
+                {foreach $rsCourses as $item name=course}
                 <tr class="main-block__cart_body_table">
                     <td><span>{$smarty.foreach.products.iteration}</span></td>
                     <td><a href="/product/{$item['id']}/">{$item['name']}</a><br /></td>

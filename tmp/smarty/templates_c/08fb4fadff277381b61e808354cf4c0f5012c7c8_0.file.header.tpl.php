@@ -1,27 +1,27 @@
 <?php
-/* Smarty version 4.1.0, created on 2023-05-04 11:50:12
+/* Smarty version 4.1.0, created on 2023-05-09 03:03:04
   from 'C:\xampp\htdocs\volleyshop.local\views\default\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_64537fd492a377_91352698',
+  'unifunc' => 'content_64599bc8857e78_78006146',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '08fb4fadff277381b61e808354cf4c0f5012c7c8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\volleyshop.local\\views\\default\\header.tpl',
-      1 => 1683193688,
+      1 => 1683594183,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:leftcolumn.tpl' => 1,
+    'file:navigation.tpl' => 1,
   ),
 ),false)) {
-function content_64537fd492a377_91352698 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64599bc8857e78_78006146 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
@@ -60,7 +60,7 @@ css/Footer.css" type="text/css"/>
                     <div class="header__container-top _container">
                         <div class="header__logo">
                             <img class="header__logo_png" src="/images/img/icon_header.png" alt="Логотип"/>
-                            <a href="/views/default/index.tpl" class="header__logo_text">VolleyShop</a>
+                            <a href="/views/default/index.tpl" class="header__logo_text">CourseArt</a>
                         </div>
                         <div class="header__search">
                             <input type="text" id="search" class="header__logo_png" name="Поиск" placeholder="Поиск"/>
@@ -97,7 +97,7 @@ echo $_smarty_tpl->tpl_vars['cartCntItems']->value;
                     </div>
                 </header>
 
-    <?php $_smarty_tpl->_subTemplateRender('file:leftcolumn.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender('file:navigation.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
    <main class="page"><?php }

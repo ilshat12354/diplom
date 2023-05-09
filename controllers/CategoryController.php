@@ -9,7 +9,7 @@
 
 // подключаем модели
 include_once '../models/CategoriesModel.php';
-include_once '../models/ProductsModel.php';
+include_once '../models/CoursesModel.php';
 
  /**
  * Формирование страницы категории
@@ -20,7 +20,7 @@ include_once '../models/ProductsModel.php';
     $catId = isset($_GET['id']) ? $_GET['id'] : null; 
     if ($catId == null) {
        exit(); }
-    $rsProducts  = null;
+    $rsCourses  = null;
     $rsChildCats = null;
     $rsCategory = getCatById($catId);
     // если главная категория то показываем дочернии категории,
@@ -28,13 +28,13 @@ include_once '../models/ProductsModel.php';
     if($rsCategory['parent_id'] == 0){
         $rsChildCats = getChildrenForCat($catId);
     } else {
-        $rsProducts = getProductsByCat($catId);
+        $rsCourses = getCoursesByCat($catId);
     }
     $rsCategories = getAllMainCatsWithChildren();
     $smarty->assign('pageTitle', 'Товары категории ' . $rsCategory['name']);
      
     $smarty->assign('rsCategory', $rsCategory);
-    $smarty->assign('rsProducts', $rsProducts);
+    $smarty->assign('rsCourses', $rsCourses);
     $smarty->assign('rsChildCats', $rsChildCats);
      
     $smarty->assign('rsCategories', $rsCategories);

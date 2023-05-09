@@ -60,7 +60,7 @@ function updateCat(itemId){
 /**
  * Добавление нового продукта
  */
-function addProduct(){
+function addCourse(){
     var itemName = $('#newItemName').val();
     var itemPrice = $('#newItemPrice').val();
     var itemCatId = $('#newItemCatId').val();
@@ -71,7 +71,7 @@ function addProduct(){
     $.ajax({
         type: 'POST',
         async: false,
-        url: "/admin/addproduct/",
+        url: "/admin/addcourse/",
         data: postData,
         dataType: 'json',
         success: function(data){
@@ -89,7 +89,7 @@ function addProduct(){
 /**
  * Изменение данных продукта
  */
-function updateProduct(itemId){
+function updateCourse(itemId){
     var itemName = $('#itemName_' + itemId).val();
     var itemPrice = $('#itemPrice_' + itemId).val();
     var itemCatId = $('#itemCatId_' + itemId).val();
@@ -108,7 +108,7 @@ function updateProduct(itemId){
     $.ajax({
        type: 'POST',
        async: false,
-       url: "/admin/updateproduct/",
+       url: "/admin/updatecourse/",
        data: postData,
        dataType: 'json',
        success: function(data){
@@ -121,7 +121,7 @@ function updateProduct(itemId){
  * Показывать или прятать данные о заказе
  * 
  */
-function showProducts(id){
+function showCourses(id){
     var objName = "#purchasesForOrderId_" + id;
     if($(objName).css('display') !== 'table-row') {
         $(objName).show();

@@ -6,7 +6,7 @@
  */
 
 include_once '../models/CategoriesModel.php';
-include_once '../models/ProductsModel.php';
+include_once '../models/CoursesModel.php';
 
 /**
  * Формирование главной страницы сайта
@@ -18,8 +18,8 @@ function indexAction($smarty){
         if($itemId == null){}
     
     $rsCategories = getAllMainCatsWithChildren();
-    $rsProducts = getLastProducts(100);            
-    $rsProduct = getProductById($itemId);
+    $rsCourses = getLastCourses(100);            
+    $rsCourse = getCourseById($itemId);
     
     $smarty->assign('itemInCart', 0);
     if(in_array($itemId, $_SESSION['cart'])){
@@ -28,8 +28,8 @@ function indexAction($smarty){
         
     $smarty->assign('pageTitle', 'Главная страница сайта');
     $smarty->assign('rsCategories', $rsCategories);
-    $smarty->assign('rsProducts', $rsProducts);
-    $smarty->assign('rsProduct', $rsProduct);
+    $smarty->assign('rsCourses', $rsCourses);
+    $smarty->assign('rsCourse', $rsCourse);
     
     loadTemplate($smarty, 'header');
     loadTemplate($smarty, 'index');

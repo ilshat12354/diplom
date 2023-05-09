@@ -8,11 +8,11 @@
  */
 
 // подключаем модели
-include_once '../models/ProductsModel.php';
+include_once '../models/CoursesModel.php';
 include_once '../models/CategoriesModel.php';
 
 /**
- * Формирование страницы продукта
+ * Формирование страницы курса
  * 
  * @param object $smarty шаблонизатор 
  */
@@ -21,8 +21,8 @@ function indexAction($smarty){
     if($itemId == null){
         exit(); }
         
-    // получить данные продукта
-    $rsProduct = getProductById($itemId);
+    // получить данные о курсе
+    $rsCourse = getCourseById($itemId);
 
     // получить все категории 
     $rsCategories = getAllMainCatsWithChildren();
@@ -34,9 +34,9 @@ function indexAction($smarty){
      	 	 
     $smarty->assign('pageTitle', '');
     $smarty->assign('rsCategories', $rsCategories);
-    $smarty->assign('rsProduct', $rsProduct);
+    $smarty->assign('rsCourse', $rsCourse);
 
     loadTemplate($smarty, 'header');
-    loadTemplate($smarty, 'product');
+    loadTemplate($smarty, 'course');
     loadTemplate($smarty, 'footer');
 }

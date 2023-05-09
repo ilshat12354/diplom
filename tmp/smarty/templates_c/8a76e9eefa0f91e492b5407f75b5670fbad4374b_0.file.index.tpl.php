@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2023-02-20 01:13:33
+/* Smarty version 4.1.0, created on 2023-05-08 23:58:00
   from 'C:\xampp\htdocs\volleyshop.local\views\default\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_63f2bb2db4e209_52465251',
+  'unifunc' => 'content_6459706835eaa2_06794394',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8a76e9eefa0f91e492b5407f75b5670fbad4374b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\volleyshop.local\\views\\default\\index.tpl',
-      1 => 1676852009,
+      1 => 1683583060,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63f2bb2db4e209_52465251 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6459706835eaa2_06794394 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="page__main-block main-block">
     <div class="main-block__container _container">
         <div class="grid_main_page">
             <div class="grid__body">
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rsProducts']->value, 'item', false, NULL, 'products', array (
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rsCourses']->value, 'item', false, NULL, 'courses', array (
 ));
 $_smarty_tpl->tpl_vars['item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
@@ -36,18 +36,18 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
                 <div id="grid__item0" class="grid__item">
                     <div class="location">
                         <div class="image">
-                            <a href="/product/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+                            <a href="/course/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 /">
-                                <img src="/images/products/<?php echo $_smarty_tpl->tpl_vars['item']->value['image'];?>
+                                <img src="/images/courses/<?php echo $_smarty_tpl->tpl_vars['item']->value['image'];?>
 " width="150" />
                             </a>
                         </div>
                         <div class="info">
                             <div class="info__name_and_cost">
-                                <a href="/product/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+                                <a href="/course/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 /" class="info__name"><?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
 </a>
-                                <a href="/product/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+                                <a href="/course/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 /" class="info__cost"><?php echo $_smarty_tpl->tpl_vars['item']->value['price'];?>
 </a>
                             </div>

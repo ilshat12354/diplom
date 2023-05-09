@@ -6,7 +6,7 @@
  */
 
 /**
- * Создание заказа (без привязки товара)
+ * Создание заказа (без привязки курса)
  * 
  * @param string $name
  * @param string $phone
@@ -14,7 +14,7 @@
  * @return integer ID созданного заказа 
  */
 function makeNewOrder($name, $phone, $adress){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     //> инициализация переменных
     $userId = $_SESSION['user']['id'];
     $comment = "id пользователя: {$userId}<br />
@@ -52,8 +52,8 @@ function makeNewOrder($name, $phone, $adress){
  * @param integer $userId ID пользователя
  * @return array массив заказов с привязкой к продуктам 
  */
-function getOrdersWithProductsByUser($userId){	
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+function getOrdersWithCoursesByUser($userId){	
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $userId = intval($userId);
     $sql = "SELECT * FROM orders WHERE `user_id` = '{$userId}' ORDER BY id DESC";
     $rs = mysqli_query($db, $sql); 
@@ -74,7 +74,7 @@ function getOrdersWithProductsByUser($userId){
  * @return array массив заказов с привязкой к пользователям
  */
 function getOrders(){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = "SELECT o.*, u.name, u.email, u.phone, u.adress
            FROM orders AS `o` 
            LEFT JOIN users AS `u` ON o.user_id = u.id
@@ -82,7 +82,7 @@ function getOrders(){
     $rs = mysqli_query($db, $sql);
     $smartyRs = array();
     while($row = mysqli_fetch_assoc($rs)){
-        $rsChildren = getProductsForOrder($row['id']);
+        $rsChildren = getCoursesForOrder($row['id']);
         if($rsChildren){
             $row['children'] = $rsChildren;
             $smartyRs[] = $row;
@@ -97,11 +97,11 @@ function getOrders(){
  * @param type $orderId ID заказа
  * @return array массив данных товаров
  */
-function getProductsForOrder($orderId){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+function getCoursesForOrder($orderId){
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = "SELECT * FROM purchase AS pe
-           LEFT JOIN products AS ps
-           ON pe.product_id = ps.id
+           LEFT JOIN courses AS cs
+           ON pe.product_id = cs.id
            WHERE (`order_id` = '{$orderId}')";
     $rs = mysqli_query($db, $sql);
     return createSmartyRsArray($rs);
@@ -114,7 +114,7 @@ function getProductsForOrder($orderId){
  * @param type $status статус заказа
  */
 function updateOrderStatus($itemId, $status){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = "UPDATE orders SET `status` = '{$status}' WHERE id = '{$itemId}'";
     $rs = mysqli_query($db, $sql);
     return $rs;
@@ -127,7 +127,7 @@ function updateOrderStatus($itemId, $status){
  * @param type $datePayment дата заказа
  */
 function updateOrderDatePayment($itemId, $datePayment){
-    $db = mysqli_connect("127.0.0.1", "root", "", "volleyshop");
+    $db = mysqli_connect("127.0.0.1", "root", "", "courseart");
     $sql = "UPDATE orders SET `date_payment` = '{$datePayment}' WHERE id = '{$itemId}'";
     $rs = mysqli_query($db, $sql);
     return $rs;

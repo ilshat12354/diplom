@@ -80,7 +80,7 @@ hr {
     justify-content: flex-end;
     align-items: center;
     height: 75px;
-    gap: 410px;
+    gap: 400px;
 
     flex: none;
     order: 2;
@@ -236,8 +236,6 @@ hr {
     align-items: center;
     padding: 0px;
     gap: 32px;
-    width: 260px;
-    height: 15px;
     
     flex: none;
     order: 0;
@@ -249,8 +247,6 @@ hr {
     align-items: center;
     padding: 0px;
     gap: 32px;
-    width: 260px;
-    height: 15px;
 }
 .header__container-down_categories_dropmenu > ul li a{
     font-family: 'Inter';
